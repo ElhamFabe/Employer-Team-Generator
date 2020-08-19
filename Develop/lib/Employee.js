@@ -23,4 +23,4 @@ class Employee {
     }
 }
 
-module.export = Employee
+module.export = Employee;
