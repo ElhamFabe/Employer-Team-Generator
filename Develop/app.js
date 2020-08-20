@@ -65,15 +65,15 @@ function EmployeeChoice() {
             // does not.
             switch (answers.addEmployee) {
                 case false:
-                // const html = render(EmployeeArr)
-                //     fs.writeFile("outPutPath/team.html", html, function (err) {
-                //         if (err) {
-                //             return console.log(err)
-                //         }
-                //     });
+                    const html = render(EmployeeArr);
+                    fs.writeFile("outPutPath/team.html", html, function (err) {
+                        if (err) {
+                            return console.log(err)
+                        }
+                    });
             }
 
-        })
+        });
 }
 EmployeeChoice()
 
@@ -83,6 +83,7 @@ EmployeeChoice()
 const EmployeeArr = []
 
 function managerQuestions() {
+    console.log(managerQuestions)
     inquirer
         .prompt([
             {
@@ -141,7 +142,13 @@ function engineerQuestions() {
             {
                 type: "input",
                 name: "email",
-                message: "Enter your Engineer email:"
+                message: "Enter your Engineer email:",
+                validate: async (input) => {
+                    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)) {
+                        return true;
+                    }
+                    return "Please enter a valid email address.";
+                }
             },
             {
                 type: "input",
@@ -172,7 +179,13 @@ function internQuestions() {
             {
                 type: "input",
                 name: "email",
-                message: "Enter your intern email:"
+                message: "Enter your intern email:",
+                validate: async (input) => {
+                    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)) {
+                        return true;
+                    }
+                    return "Please enter a valid email address.";
+                }
             },
             {
                 type: "input",
