@@ -11,9 +11,9 @@ class Intern extends Employee {
 
     }
     getRole() {
-        return "Intern";
+        return 'Intern';
     }
 
 
 }
-module.export = Intern;
+module.exports = Intern;

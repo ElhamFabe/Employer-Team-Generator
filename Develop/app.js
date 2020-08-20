@@ -1,8 +1,11 @@
+//  Node packages
+const inquirer = require("inquirer");
+const path = require("path");
+
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const inquirer = require("inquirer");
-const path = require("path");
+
 const fs = require("fs");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
@@ -61,10 +64,15 @@ function EmployeeChoice() {
             // Hint: you may need to check if the `output` folder exists and create it if it
             // does not.
             switch (answers.addEmployee) {
-                case false
+                case false:
                 // const html = render(EmployeeArr)
-
+                //     fs.writeFile("outPutPath/team.html", html, function (err) {
+                //         if (err) {
+                //             return console.log(err)
+                //         }
+                //     });
             }
+
         })
 }
 EmployeeChoice()
@@ -79,23 +87,23 @@ function managerQuestions() {
             {
                 type: "input",
                 name: "name:",
-                message: "Enter manager's name:",
+                message: "Enter manager name:",
 
             },
             {
                 type: "input",
                 name: "id",
-                message: "Enter your manager's id:"
+                message: "Enter your manager id:"
             },
             {
                 type: "input",
                 name: "email",
-                message: "Enter your manager's email:"
+                message: "Enter your manager email:"
             },
             {
                 type: "input",
                 name: "Office",
-                message: "Enter your manager's office number:"
+                message: "Enter your manager office number:"
             },
         ]).then(function (answers) {
             const manager = new Manager(answers.name, parseInt(answers.id), answers.email, parseInt(answers.office));
@@ -114,18 +122,18 @@ function engineerQuestions() {
             {
                 type: "input",
                 name: "name:",
-                message: "Enter Engineer's name:",
+                message: "Enter Engineer name:",
 
             },
             {
                 type: "input",
                 name: "id",
-                message: "Enter your Engineer's id:"
+                message: "Enter your Engineer id:"
             },
             {
                 type: "input",
                 name: "email",
-                message: "Enter your Engineer's email:"
+                message: "Enter your Engineer email:"
             },
             {
                 type: "input",
@@ -145,23 +153,23 @@ function internQuestions() {
             {
                 type: "input",
                 name: "name:",
-                message: "Enter intern's name:",
+                message: "Enter intern name:",
 
             },
             {
                 type: "input",
                 name: "id",
-                message: "Enter your intern's id:"
+                message: "Enter your intern id:"
             },
             {
                 type: "input",
                 name: "email",
-                message: "Enter your intern's email:"
+                message: "Enter your intern email:"
             },
             {
                 type: "input",
                 name: "School",
-                message: "Enter your intern's school:"
+                message: "Enter your intern school:"
             },
         ]).then(function (answers) {
             const intern = new Intern(answers.name, parseInt(answers.id), answers.email, answers.school);
