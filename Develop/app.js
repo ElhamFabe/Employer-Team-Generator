@@ -63,15 +63,13 @@ function EmployeeChoice() {
             // `output` folder. You can use the variable `outputPath` above target this location.
             // Hint: you may need to check if the `output` folder exists and create it if it
             // does not.
-            switch (answers.addEmployee) {
-                case false:
-                    const html = render(EmployeeArr);
-                    fs.writeFile("outPutPath/team.html", html, function (err) {
-                        if (err) {
-                            return console.log(err)
-                        }
-                    });
-            }
+            // switch (answers.addEmployee) {
+            //     case false:
+            //         const html = render(EmployeeArr);
+            // console.log(html) 
+
+            //        return fs.writeFileSync(outputPath, html)
+            // }
 
         });
 }
