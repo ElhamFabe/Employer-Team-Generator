@@ -79,6 +79,7 @@ EmployeeChoice()
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
+// create team employee array
 const EmployeeArr = []
 
 function managerQuestions() {
@@ -98,12 +99,19 @@ function managerQuestions() {
             {
                 type: "input",
                 name: "email",
-                message: "Enter your manager email:"
+                message: "Enter your manager email:",
+                validate: async (input) => {
+                    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)) {
+                        return true;
+                    }
+                    return "Please enter a valid email address.";
+                }
             },
             {
                 type: "input",
                 name: "Office",
-                message: "Enter your manager office number:"
+                message: "Enter your manager office number:",
+
             },
         ]).then(function (answers) {
             const manager = new Manager(answers.name, parseInt(answers.id), answers.email, parseInt(answers.office));

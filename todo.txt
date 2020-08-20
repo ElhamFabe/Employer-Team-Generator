@@ -15,7 +15,10 @@ Create employee properties and methods:
 //complete
 
 All three classes will extend to 'Employee'
+- fixed issue (TypeError: Class extends value #<Object> is not a constructor or null)
+-module.exports
 //complete
+
 each class will have employee properties and methods as well as:
 
 Manager:
@@ -31,5 +34,6 @@ Intern:
 Prompt user to build Employee Team Members
 //complete
 
-
+create output folder and team.html file
+//complete
 
