@@ -1,0 +1,35 @@
+Create classes for 
+-Employee
+-Manager 
+-Intern 
+//complete
+
+Create employee properties and methods:
+ * name
+  * id
+  * email
+  * getName()
+  * getId()
+  * getEmail()
+  * getRole() // Returns 'Employee'
+//complete
+
+All three classes will extend to 'Employee'
+//complete
+each class will have employee properties and methods as well as:
+
+Manager:
+-office number:
+
+Engineer:
+-github user name:
+
+Intern:
+-school;
+//complete
+
+Prompt user to build Employee Team Members
+//complete
+
+
+
