@@ -7,11 +7,14 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
 const fs = require("fs");
-
+// output folder to store html file from employee team generator
 const OUTPUT_DIR = path.resolve(__dirname, "output");
+// html path to output folder
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+// Create employee team array
+const EmployeeArr = []
 
 
 // Write code to use inquirer to gather information about the development team members,
