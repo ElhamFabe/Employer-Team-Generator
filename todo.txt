@@ -37,3 +37,8 @@ Prompt user to build Employee Team Members
 create output folder and team.html file
 //complete
 
+Run Npm Test
+//complete
+
+add node_modules to gitignore file
+//
