@@ -36,18 +36,7 @@ function EmployeeChoice() {
             }
         ]).then(answers => {
             console.log(answers);
-            switch (answers.EmployeeRole) {
-                case "Manager":
-                    managerQuestions();
-                    break;
-                case "Engineer":
-                    engineerQuestions();
-                    break;
-                case "Intern":
-                    internQuestions();
-                    break;
-
-            }
+           
             // HINT: make sure to build out your classes first! Remember that your Manager, Engineer,
             // and Intern classes should all extend from a class named Employee; see the directions
             // for further information. Be sure to test out each class and verify it generates an
@@ -63,13 +52,36 @@ function EmployeeChoice() {
             // `output` folder. You can use the variable `outputPath` above target this location.
             // Hint: you may need to check if the `output` folder exists and create it if it
             // does not.
-            // switch (answers.addEmployee) {
-            //     case false:
-            //         const html = render(EmployeeArr);
-            // console.log(html) 
+            switch (answers.addEmployee) {
+                case false:
+                    const html = render(EmployeeArr);
+                    console.log(html)
 
-            //        return fs.writeFileSync(outputPath, html)
-            // }
+                    fs.writeFileSync(outputPath, html, function(err){
+                        if (err) {
+                            console.log(err);
+                        }
+                        console.log("Succesfully created template");
+                        
+                    });
+                    break;
+
+                    case true:
+                        switch (answers.employeeRole) {
+                            case "Manager":
+                                managerQuestions();
+                                break;
+                            case "Engineer":
+                                engineerQuestions();
+                                break;
+                            case "Intern":
+                                internQuestions();
+                                break;
+            
+                        }
+                        break;
+                       
+            }
 
         });
 }
@@ -86,7 +98,7 @@ function managerQuestions() {
         .prompt([
             {
                 type: "input",
-                name: "name:",
+                name: "name",
                 message: "Enter manager name:",
 
             },
@@ -113,7 +125,7 @@ function managerQuestions() {
 
             },
         ]).then(function (answers) {
-            const manager = new Manager(answers.name, parseInt(answers.id), answers.email, parseInt(answers.office));
+            const manager = new Manager(answers.name, parseInt(answers.id), answers.email, parseInt(answers.Office));
             EmployeeArr.push(manager);
             EmployeeChoice()
             console.log(manager);
@@ -128,7 +140,7 @@ function engineerQuestions() {
         .prompt([
             {
                 type: "input",
-                name: "name:",
+                name: "name",
                 message: "Enter Engineer name:",
 
             },
@@ -154,7 +166,7 @@ function engineerQuestions() {
                 message: "Enter your Github user name:"
             },
         ]).then(function (answers) {
-            const engineer = new Engineer(answers.name, parseInt(answers.id), answers.email, answers.github);
+            const engineer = new Engineer(answers.name, parseInt(answers.id), answers.email, answers.Github);
             EmployeeArr.push(engineer);
             EmployeeChoice()
             console.log(engineer);
@@ -165,7 +177,7 @@ function internQuestions() {
         .prompt([
             {
                 type: "input",
-                name: "name:",
+                name: "name",
                 message: "Enter intern name:",
 
             },
@@ -191,7 +203,7 @@ function internQuestions() {
                 message: "Enter your intern school:"
             },
         ]).then(function (answers) {
-            const intern = new Intern(answers.name, parseInt(answers.id), answers.email, answers.school);
+            const intern = new Intern(answers.name, parseInt(answers.id), answers.email, answers.School);
             EmployeeArr.push(intern);
             EmployeeChoice()
             console.log(intern);
