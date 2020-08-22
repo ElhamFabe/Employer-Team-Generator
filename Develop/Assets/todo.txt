@@ -1,0 +1,44 @@
+Create classes for 
+-Employee
+-Manager 
+-Intern 
+//complete
+
+Create employee properties and methods:
+ * name
+  * id
+  * email
+  * getName()
+  * getId()
+  * getEmail()
+  * getRole() // Returns 'Employee'
+//complete
+
+All three classes will extend to 'Employee'
+- fixed issue (TypeError: Class extends value #<Object> is not a constructor or null)
+-module.exports
+//complete
+
+each class will have employee properties and methods as well as:
+
+Manager:
+-office number:
+
+Engineer:
+-github user name:
+
+Intern:
+-school;
+//complete
+
+Prompt user to build Employee Team Members
+//complete
+
+create output folder and team.html file
+//complete
+
+Run Npm Test
+//complete
+
+add node_modules to gitignore file
+//complete

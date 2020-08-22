@@ -1,0 +1,41 @@
+
+body{
+    background: lightgrey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.team-heading {
+    background: lightslategrey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    justify-content: center;
+    align-items: center;
+
+}
+.container{
+    align-items: center;
+}
+.row1{
+    margin-top: 5rem;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+.employee-card
+{
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 2px black;
+    text-align: center;
+    background-color: lightslategray;
+    justify-content: space-between;
+}
+
+.inside {
+    border-radius: 1rem;
+    color:black;
+    
+}
